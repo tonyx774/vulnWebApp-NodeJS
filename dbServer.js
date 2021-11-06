@@ -15,7 +15,7 @@ var parseForm = bodyParser.urlencoded({ extended: false })
 app.use(cookieParser());
 const delay = ms => new Promise(res => setTimeout(res, ms));
 
-
+var loginType = "/login"
 
  
  // your route configuration here 
@@ -53,11 +53,11 @@ db.getConnection((err, connection)=> {
 
 
 app.get('',function(req,res) {
-    res.render('index',{usercookieval:"Select Level",loginType:"/loginSecure"})
+    res.render('index',{usercookieval:"Select Level",loginType:"/login"})
   });
 
 // Assigning cookie value
-app.post('',function(req,res){
+app.post('/selectSecurity',function(req,res){
     const usercookievalue = req.body.option
     res.cookie('Level',usercookievalue, { maxAge: 900000, httpOnly: true });
     console.log(usercookievalue)
@@ -71,23 +71,25 @@ app.post('',function(req,res){
         csrfProtection = csrf({ cookie: true })
 
     }
-    res.render('index',{usercookieval:usercookievalue})
+    res.render('selectSecurity',{usercookieval:usercookievalue,loginType:loginType})
 })
  
 
-
+app.get("/selectSecurity",(req,res) =>{
+    res.render('selectSecurity',{usercookieval:"Select Level",loginType:"/loginSecure"})
+})
 
 
 app.get("/login",  (req,res) => {
     
-    res.render('login',{message: ''})
+    res.render('login',{message: '',loginType:"/loginSecure"})
     
 })
 
 
 app.get("/loginSecure", csrfProtection, (req,res) => {
     
-    res.render('loginSecure',{message: '', csrfToken:req.csrfToken()})}
+    res.render('loginSecure',{message: '',loginType:"/loginSecure", csrfToken:req.csrfToken()})}
     
     )
 
