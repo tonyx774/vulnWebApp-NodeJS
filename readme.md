@@ -4,4 +4,4 @@
 
 ## SETUP
 This project can be set up by cloning:
-` git clone
+` git clone https://github.com/tonyx774/vulnWebApp-NodeJS.git`
