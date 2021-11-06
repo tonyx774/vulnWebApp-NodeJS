@@ -3,5 +3,5 @@
 
 
 ## SETUP
-This project can be set up by cloning:
+This project can be set up by cloning:\n
 ` git clone https://github.com/tonyx774/vulnWebApp-NodeJS.git`
