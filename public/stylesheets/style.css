@@ -1,0 +1,7 @@
+:root {
+    --bg1: rgb(30,30,30)
+}
+html, body {
+    background: var(--bg1);
+    color: white;
+}
