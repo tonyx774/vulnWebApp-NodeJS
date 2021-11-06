@@ -7,15 +7,26 @@
 
 
     <body>
-        <h1>Logged In</h1>
+        <div class="sidenav">
+            <a href=<%= loginType%>>Brute Force</a>
+            <a href="#">Command Injection</a>
+            <a href="#">CSRF</a>
+            <a href="#">SQL Injection</a>
+            <a href="#">XSS</a>
+            <a href="/selectSecurity">Select Security</a>
+          </div>
+          <div class="main">
+            <h1>Log into system </h1>
         <h2><%= message%></h2>
         <form action="" method="post">
-            <label for="team_name">Enter name: </label>
+            <label for="team_name">Name: </label>
             
             <input id="username" type="text" name="username" value="jack">
+            <label for="team_name">Password: </label>
             <input id="password" type="text" name="password" value="daf">
-            <input type="submit" value="OK">
+            <input type="submit" value="Submit">
         </form>
+        <h2><%= message%></h2>
     </body>
 
 
