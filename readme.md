@@ -18,10 +18,10 @@ Run the dbServer file using:<br/>
 ## Weak
 For the weak security setting, the password can easily be bruteforced using many different tools, the two I will demonstrate are "burpsuite" and "wfuzz". 
 #### **Setting up easy security level**
-![selectSecurityWeak](./images/selectSecurityWeak.png)
+![selectSecurityWeak](https://user-images.githubusercontent.com/92649279/140629770-aa15ab0c-36b6-4755-8b6a-945e4a132a67.PNG)
 <br><br>
 #### **Navigate to brute force**
-![selectBruteForce](./images/selectBruteForce.png)  
+![selectBruteForce](https://user-images.githubusercontent.com/92649279/140629779-6bf55d8e-9037-404c-b9a0-450042b62da9.PNG)
 <br><br>   
 #### **BurpSuite**
 After opening burpsuite and  intercepting the request and starting an attack by forwarding it to the intruder we are shown the following and can see the only password without the incorrect field is named "qwerty" for the user "jack"
@@ -34,7 +34,7 @@ Firstly make sure you have wfuzz installed. It is a fuzzing tool which will allo
 <br><br>
 Run the following command <br> 
 
-![wFuzzCommandEasy](./images/wFuzzCommandEasy.png)
+![wFuzzCommandEasy](https://user-images.githubusercontent.com/92649279/140629789-dd46e0b1-8f5c-4f9e-a61a-368c9d5f8d02.PNG)
 <br>
 <br>
 **Explanation**<br><br>
@@ -45,8 +45,7 @@ Run the following command <br>
 #### **Result**
 <br>
 Here we can see the the password "abc123" has a different response length this indicates that it is correct. We could also grep the reply for a different length to only display correct passwords if we wanted to. <br>
-
-![wFuzzResultEasy](./images/wFuzzResultEasy.png)<br>
+![wFuzzResultEasy](https://user-images.githubusercontent.com/92649279/140629795-bba5c996-ddf3-4158-b989-0444270b0cd4.PNG)<br>
 
 We can also add a userlist parameter in the wFuzz command to also loop through different users however i will leave this up to you to learn for yourself <br><br>
 
