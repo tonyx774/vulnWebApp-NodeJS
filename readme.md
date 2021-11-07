@@ -25,7 +25,7 @@ For the weak security setting, the password can easily be bruteforced using many
 <br><br>   
 #### **BurpSuite**
 After opening burpsuite and  intercepting the request and starting an attack by forwarding it to the intruder we are shown the following and can see the only password without the incorrect field is named "qwerty" for the user "jack"
-![burpSuiteEasy](./images/burpSuiteEasy.png)
+![burpSuiteEasy](https://user-images.githubusercontent.com/92649279/140629745-1029562d-6aaf-4052-9aab-a806759079bb.PNG)
 <br>**Resources to help you figure out how to do this yourself:**<br>
 https://portswigger.net/support/using-burp-to-brute-force-a-login-page
 
