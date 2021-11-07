@@ -10,3 +10,6 @@ This project can be set up by cloning:<br/>
 Run the dbServer file using:<br/>
 `nodemon dbServer `
 <br/>
+
+
+## BRUTE FORCING
