@@ -45,7 +45,10 @@ Run the following command <br>
 #### **Result**
 <br>
 Here we can see the the password "abc123" has a different response length this indicates that it is correct. We could also grep the reply for a different length to only display correct passwords if we wanted to. <br>
-![wFuzzResultEasy](https://user-images.githubusercontent.com/92649279/140629795-bba5c996-ddf3-4158-b989-0444270b0cd4.PNG)<br>
+
+![wFuzzResultEasy](https://user-images.githubusercontent.com/92649279/140629795-bba5c996-ddf3-4158-b989-0444270b0cd4.PNG)
+
+<br>
 
 We can also add a userlist parameter in the wFuzz command to also loop through different users however i will leave this up to you to learn for yourself <br><br>
 
