@@ -68,7 +68,7 @@ The methods for this are the same as the methods for the easy Security level how
 <br>**Resources:**<br>
 https://symfony.com/blog/new-in-symfony-5-2-login-throttling <br>
 ## Strong
-For the strong security setting, throttling and a csrf token have been added. This blocks tools such as "burpsuite" and "wfuzz" from working as they will submit and invalid csrf token. However this too can be bypassed and I will leave this up to you to discover.<br>
+For the strong security setting, throttling and a csrf token have been added. This blocks tools such as "burpsuite" and "wfuzz" from working as they will submit and invalid csrf token. However this too can be bypassed using *hint* certain parameters in wFuzz  and I will leave this up to you to discover.<br>
 <br>**Resources:**<br>
 https://portswigger.net/web-security/csrf/tokens
 <br>
