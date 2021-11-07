@@ -53,7 +53,7 @@ db.getConnection((err, connection)=> {
 
 
 app.get('',function(req,res) {
-    res.render('index',{usercookieval:"Select Level",loginType:"/login"})
+    res.render('index',{usercookieval:"Weak",loginType:"/login"})
   });
 
 // Assigning cookie value
