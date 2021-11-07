@@ -9,22 +9,21 @@
 
     <body>
         <div class="sidenav">
+            <a href="/">Index</a>
             <a href=<%= loginType%>>Brute Force</a>
             <a href="#">Command Injection</a>
             <a href="#">CSRF</a>
             <a href="#">SQL Injection</a>
             <a href="#">XSS</a>
-            <a href="#">Select Security</a>
+            <a href="/selectSecurity">Select Security</a>
           </div>
           <div class="main">
-            <h2>Select Security Level Below </h2>
-        <form action="" method="post">    
-            <select onchange="this.form.submit()" id="option" name="option">
-                <option><%= usercookieval%></option>
-                <option>Weak</option>
-                <option>Moderate</option>
-                <option>Strong</option>
-            </select>
+            <h2>Choose "Select Security" option to choose security level. Preset to "medium"</h2>
+            <br><br><br>
+            <h3>Currently available vulnerabilites to test:</h3>
+            <h4>Brute Force(can be tested using tools such as burpsuite and wfuzz)</h4>
+            
+       
 
         </div>
     </body>
