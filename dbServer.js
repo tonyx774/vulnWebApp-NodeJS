@@ -35,7 +35,7 @@ const db = mysql.createPool({
     user: "root",
     password: "",
     database: "usercreddb",
-    port: "3307"
+    port: "3306"
 })  
 
 db.getConnection((err, connection)=> {
@@ -110,7 +110,7 @@ app.post("/loginSecure",csrfProtection, (req, res)=>{
     })    
 
 
-// LOGIN(LOW LEVEL)
+// LOGIN(Find level)
 app.post("/login", (req, res)=>{
     var cookie = req.cookies.Level;
     console.log("Cookie:"+cookie);
@@ -156,14 +156,14 @@ db.getConnection( async(err, connection)=>{
     if (result.length == 0){
         
         console.log("Username not registered")
-        res.sendStatus(404)
+        res.render('login',{message:'Invalid Username!'})
     }
 
     else{
         const hashedPassword = result[0].password
         
             if(await  crypto.createHmac("sha256","flag{anyH3adsf0rCS}").update(password).digest('hex') == hashedPassword) {
-                res.render('login',{message:'User logged in'})
+                res.render('login',{message:'User logged in Successfully'})
                
     
             }
@@ -195,24 +195,24 @@ function  mediumLevelBrute(user,password,res){
         if(err) throw(err)
     
         if (result.length == 0){
+            await delay(5000);
             
-            console.log("Username not registered")
-            res.sendStatus(404)
+            res.render('login',{message:'Username/Password is incorrect!'})
         }
     
         else{
             const hashedPassword = result[0].password
     
             if(await  crypto.createHmac("sha256","flag{anyH3adsf0rCS}").update(password).digest('hex') == hashedPassword) {
-                res.render('login',{message:'User logged in'})
+                res.render('login',{message:'User logged in Successfully'})
                
     
             }
             else{ 
                 await delay(5000);
-                console.log("pass incorrect medium")
                 
-                res.render('login',{message:'Password Incorrect!'})
+                
+                res.render('login',{message:'Username/Password is incorrect!'})
                 
                 
             }
@@ -240,23 +240,22 @@ function  strongLevelBrute(user,password,res,req){
         if(err) throw(err)
     
         if (result.length == 0){
-            
-            console.log("Username not registered")
-            res.sendStatus(404)
+            await delay(5000);
+            res.render('loginSecure',{message:'Username/Password is incorrect!',csrfToken: req.csrfToken()})
         }
     
         else{
             const hashedPassword = result[0].password
             try {
                 if(await  crypto.createHmac("sha256","flag{anyH3adsf0rCS}").update(password).digest('hex') == hashedPassword) {
-                    res.render('loginSecure',{message:'User logged in',csrfToken: req.csrfToken()})
+                    res.render('loginSecure',{message:'User logged in successfully',csrfToken: req.csrfToken()})
                    
         
                 }
                 else{ 
                     await delay(5000);
                     console.log("pass incorrect")
-                    res.render('loginSecure',{message:'Password Incorrect!',csrfToken: req.csrfToken()})
+                    res.render('loginSecure',{message:'Username/Password is incorrect!',csrfToken: req.csrfToken()})
                     
                 }
                 
