@@ -1,6 +1,6 @@
 # Vulnerable Web Application built with NodeJS
 ## Warning: DO NOT UPLOAD TO ANY PUBLIC SERVER AS IT WILL BE COMPROMISED
-## Note: Application is still in development, brute forcing is the only option which has full functionality so far and DATABASE CONFIG FILES HAVE NOT BEEN UPLOADED, so if for some reason you want to run this on your local machine you will have to navigate to the databaseCreationi directory which holds text files of sql statements which are you to create the database.
+## Note: Application is still in development, brute forcing is the only option which has full functionality so far and DATABASE CONFIG FILES HAVE NOT BEEN UPLOADED, so if for some reason you want to run this on your local machine you will have to navigate to the databaseCreation directory which holds text files of sql statements which are you to create the database.
 
 ## SETUP
 You will need nodeJs, npm and nodemon for this project to build successfully.<br/><br/>
